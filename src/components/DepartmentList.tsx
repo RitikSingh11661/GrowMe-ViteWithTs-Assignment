@@ -13,6 +13,7 @@ const DepartmentList: React.FC = () => {
     const [selected, setSelected] = useState<{ [key: string]: boolean }>({});
   
     const handleExpand = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      event.preventDefault();
       setExpanded(isExpanded ? panel : false);
     };
   

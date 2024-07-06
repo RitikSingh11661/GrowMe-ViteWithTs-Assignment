@@ -29,7 +29,16 @@ const DataTable: React.FC = () => {
   return (
     <Box sx={{ height: 400, width: '60%',margin:'auto'}}>
       <Typography variant="h5" component="h2">Posts</Typography>
-      <DataGrid rows={posts} columns={columns} paginationModel={paginationModel} onPaginationModelChange={setPaginationModel} loading={loading}/>
+      <DataGrid
+        rows={posts}
+        columns={columns}
+        pagination
+        paginationMode="client"
+        pageSizeOptions={[5, 10, 20]} // Include all available page sizes
+        paginationModel={paginationModel}
+        onPaginationModelChange={setPaginationModel}
+        loading={loading}
+      />
     </Box>
   );
 };
